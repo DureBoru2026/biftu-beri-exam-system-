@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 });
 
 // Health check endpoint to diagnose backend availability
-app.get("/api/ai/health", (req, res) => {
+app.get(["/api/ai/health", "/ai/health"], (req, res) => {
   res.json({
     status: "ok",
     timestamp: new Date().toISOString(),
